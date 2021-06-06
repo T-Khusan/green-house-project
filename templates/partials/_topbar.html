@@ -1,0 +1,50 @@
+{% load static i18n app_tags %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as languages %}
+
+<ul >
+        {% for language, title in languages %}
+        <li class="{% if LANGUAGE_CODE == language %}active{% endif %}" style="display: inline-block">
+        {% get_url_tag request=request lang=language as url %}
+            <a href="{{ url }}" class="link-head rot">{{ title }}</a>
+            {% endfor %}
+</ul>
+
+
+<h1>{% trans 'Our Services' %}</h1>
+<h1>{% trans 'Our Services2' %}</h1>
+
+
+<!-- Top Bar -->
+<section id="top-bar" class="p-3">
+    <div class="container">
+    <div class="row">
+        
+        <div class="col-md-4">
+        <i class="fas fa-phone"></i> (90)-555-5555
+        </div>
+        <div class="col-md-4">
+        <i class="fas fa-envelope-open"></i> contact@greenhouse.co
+        </div>
+        <div class="col-md-4">
+        <div class="social text-right">
+            <a href="#">
+            <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+            <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#">
+            <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#">
+            <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#">
+            <i class="fab fa-pinterest"></i>
+            </a>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
